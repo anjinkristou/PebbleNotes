@@ -94,6 +94,12 @@ static void ts_select_click_cb(MenuLayer *ml, MenuIndex *idx, void *context) {
 	TS_Item task = ts_items[idx->row];
 	comm_update_task_status(listId, task.id, !task.done);
 }
+static void ts_select_long_click_cb(MenuLayer *ml, MenuIndex *idx, void *context) {
+	if(ts_max_count == 0 || idx->row >= ts_count)
+		return;
+	TS_Item task = ts_items[idx->row];
+	t_show(listId, task.id, task);
+}
 
 static void ts_window_load(Window *wnd) {
 	Layer *wnd_layer = window_get_root_layer(wnd);
