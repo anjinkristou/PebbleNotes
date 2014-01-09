@@ -1,5 +1,6 @@
 #include <pebble.h>
 #include "tasks.h"
+#include "task.h"
 #include "comm.h"
 #include "misc.h"
 #include "statusbar.h"
